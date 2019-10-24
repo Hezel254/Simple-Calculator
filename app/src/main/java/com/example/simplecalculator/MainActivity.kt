@@ -1,6 +1,8 @@
 package com.example.simplecalculator
 
+import android.content.Context
 import android.os.Bundle
+import android.os.Vibrator
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
@@ -389,6 +391,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_Del.setOnLongClickListener {
+            val v = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            val mVibratePattern = longArrayOf(0, 100)
+            v.vibrate(mVibratePattern, -1)
             editText.text.clear()
             true
         }
