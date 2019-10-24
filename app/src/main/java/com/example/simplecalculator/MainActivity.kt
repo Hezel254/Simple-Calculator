@@ -388,6 +388,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        button_Del.setOnLongClickListener {
+            editText.text.clear()
+            true
+        }
+
         button_open_bracket.setOnClickListener {
             if (TextUtils.isEmpty(editText.text.toString())) {
                 editText.setText("(")
